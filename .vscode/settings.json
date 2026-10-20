@@ -1,0 +1,7 @@
+{
+    "java.debug.settings.onBuildFailureProceed": true,
+    "editor.defaultFormatter": null,
+    "[java]": {
+        "editor.defaultFormatter": "RudraPatel.prettier-plugin-java-vscode"
+    }
+}
