@@ -1,4 +1,4 @@
-public class Math {
+public class Calculations {
 
   public static void main(String[] args) {
     int p = 3 / (5 % 3);

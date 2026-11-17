@@ -3,40 +3,54 @@ import java.util.Scanner;
 public class ExactChange {
 
   public static void main(String[] args) {
-    double amount = 0;
-    double quarters = .25;
-    double dimes = .10;
-    double nickels = .5;
-    double pennies = .1;
+    int quarters = 25;
+    int dimes = 10;
+    int nickels = 5;
+    int pennies = 1;
+
     int count = 0;
+    int count_quarters = 0;
+    int count_dimes = 0;
+    int count_nickels = 0;
+    int count_pennies = 0;
 
     Scanner scan = new Scanner(System.in);
 
     System.out.print("Please enter an amount in dollars and cents: ");
-    amount = scan.nextDouble();
+    double amount = scan.nextDouble();
     scan.close();
 
-    if (amount == 0) {
+    int cents = (int) Math.round(amount * 100);
+
+    if (cents <= 0) {
       System.out.println("No change is needed.");
     } else {
-      while (amount >= quarters) {
-        amount -= quarters;
+      while (cents >= quarters) {
+        cents -= quarters;
+        count_quarters++;
         count++;
       }
-      while (amount >= dimes) {
-        amount -= dimes;
+      while (cents >= dimes) {
+        cents -= dimes;
+        count_dimes++;
         count++;
       }
-      while (amount >= nickels) {
-        amount -= nickels;
+      while (cents >= nickels) {
+        cents -= nickels;
+        count_nickels++;
         count++;
       }
-      while (amount >= pennies) {
-        amount -= pennies;
+      while (cents >= pennies) {
+        cents -= pennies;
+        count_pennies++;
         count++;
       }
-    }
 
-    System.out.println("The minimum number of coins needed: " + count);
+      System.out.println("The minimum number of coins is: " + count);
+      System.out.println(count_quarters + " quarters");
+      System.out.println(count_dimes + " dimes");
+      System.out.println(count_nickels + " nickels");
+      System.out.println(count_pennies + " pennies");
+    }
   }
 }

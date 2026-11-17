@@ -1,4 +1,4 @@
-public class U1T5Lab1 {
+private class U1T5Lab1 {
 
   public static void main(String[] args) {
     // int someBigPosNum = 2147483600;   // 47 less than max
